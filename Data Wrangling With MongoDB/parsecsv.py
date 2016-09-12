@@ -25,9 +25,8 @@ def parse_file(datafile):
     data = []
     with open(datafile,'r') as f:
         reader = csv.reader(f)
-        desc = next(reader)
-        name = desc[1]
-        next(reader)
+        name = next(reader)[1]
+        headers = next(reader)
         for row in reader:
             data.append(row)
     # Do not change the line below
